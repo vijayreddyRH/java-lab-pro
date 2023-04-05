@@ -1,0 +1,56 @@
+// class name: Student.java
+class Student
+{
+String usn, name, branch;
+long ph;
+Student()
+{
+usn = name = branch = null;
+ph = 0;
+}
+void read_data(String u, String n, String b, long p)
+{
+usn = u;
+name = n;
+branch = b;
+ph =p;
+}
+void display()
+{
+System.out.println(usn + "\t" + name + "\t" + branch + "\t" + ph);
+}
+}
+// class name: StudentDetails.java
+import java.util.Scanner;
+public class StudentDetails {
+public static void main(String args[])
+{
+String usn, name, branch;
+long phone;
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter number of records");
+int n = sc.nextInt();
+Student[] s = new Student[n];
+for(int i=0; i<s.length;i++)
+{
+System.out.println("Enter " + (i + 1) + " Student record");
+s[i] = new Student();
+System.out.println("Enter student USN");
+usn = sc.next();
+System.out.println("Enter student Name");
+name = sc.next();
+System.out.println("Enter student Branch");
+branch = sc.next();
+System.out.println("Enter student Phone number");
+phone = sc.nextLong();
+s[i].read_data(usn, name, branch, phone);
+}
+System.out.println(".........................................");
+System.out.println("USN NAME BRANCH PHONE_NO");
+System.out.println(".........................................");
+for(int i=0; i<s.length;i++)
+{
+s[i].display();
+}
+}
+}

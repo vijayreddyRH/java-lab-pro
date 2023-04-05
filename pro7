@@ -1,0 +1,61 @@
+// interface: Resume
+public interface Resume {
+void biodata();
+}
+// Class: Teacher which implements Resume interface
+import java.util.Scanner;
+public class Teacher implements Resume{
+String name,qualification,achievements;
+float experience;
+public void biodata()
+{
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter teacher name");
+name=sc.nextLine();
+System.out.println("Enter teacher qualification");
+qualification=sc.nextLine();
+System.out.println("Enter teacher achievements");
+achievements=sc.nextLine();
+System.out.println("Enter teacher experience");
+experience=sc.nextFloat();
+System.out.println("******** Teacher Resume Starts *********");
+System.out.println("Name : " +name);
+System.out.println("Qualification : "+qualification);
+System.out.println("Achievements : "+achievements);
+System.out.println("Experience : "+experience);
+System.out.println("***************** END ******************");
+}
+}
+Class: Student which implements Resume interface
+import java.util.Scanner;
+import java.lang.*;
+public class Student implements Resume{
+String name,discipline;
+float result;
+public void biodata()
+{
+Scanner sc = new Scanner(System.in);
+System.out.println("********* Student Resume Starts *********");
+System.out.println("Enter student name");
+name=sc.next();
+System.out.println("Enter student result");
+result=sc.nextFloat();
+Scanner sc1 = new Scanner(System.in);
+System.out.println("Enter student discipline");
+discipline=sc1.nextLine();
+System.out.println("Name : " +name);
+System.out.println("Result : "+result+" cgpa");
+System.out.println("Discipline : " +discipline);
+System.out.println("***************** END ******************");
+System.out.println("************ THANK YOU! ****************");
+}
+}
+// Main Class: TestInterface
+public class TestInterface {
+public static void main(String[] args) {
+Teacher obj1=new Teacher();
+obj1.biodata();
+Student obj2=new Student();
+obj2.biodata();
+}
+}
